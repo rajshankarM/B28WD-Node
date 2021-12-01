@@ -2,7 +2,7 @@
 import express from "express";
 import { MongoClient } from "mongodb";
 import dotenv from 'dotenv';
-import { getMovies, createMovies, getMovieById, deleteMovieById, updateMovieById } from "./helper.js";
+import { moviesRouter } from "./routes/movies.js";
 
 dotenv.config();
 
