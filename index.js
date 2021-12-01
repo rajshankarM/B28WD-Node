@@ -10,7 +10,7 @@ const app = express()
 
 app.use(express.json())
  
-const PORT = 9000;
+const PORT = process.env.PORT;
 
 // const movies = ;
 

@@ -9,7 +9,9 @@ import{
 	updateMovieById 
 } from '../helper.js'
 
-router.get("/",async (request, response) => {
+router
+.route("/")
+.get(async (request, response) => {
     console.log(request.query);
     const filter = request.query;
 	console.log(filter)
@@ -19,16 +21,17 @@ router.get("/",async (request, response) => {
    const filterMovies = await getMovies(filter);
 
    response.send(filterMovies)
-});
-
-router.post('/', async (request, response) => {
+})
+.post(async (request, response) => {
 	const data = request.body;
 	// console.log(data);
 	const result = await createMovies(data)
 	response.send(data);
 });
 
-router.get("/:id",async (request, response) => {
+router
+.route("/:id")
+.get(async (request, response) => {
     console.log(request.params)
     const {id } = request.params
 
@@ -38,9 +41,8 @@ router.get("/:id",async (request, response) => {
    
 
     movie ? response.send(movie): response.status(404).send ({msg: "No matching movie found"}) ;
-});
-
-router.delete("/:id",async (request, response) => {
+})
+.delete(async (request, response) => {
     console.log(request.params)
     const {id } = request.params
 
@@ -48,9 +50,8 @@ router.delete("/:id",async (request, response) => {
 
     result.deletedCount > 0
 	? response.send(result): response.status(404).send ({msg: "No matching movie found"}) ;
-});
-
-router.put("/:id",async (request, response) => {
+})
+.put(async (request, response) => {
     console.log(request.params)
     const {id } = request.params
 	const data = request.body;
