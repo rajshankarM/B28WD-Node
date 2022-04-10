@@ -8,13 +8,13 @@ const quote = "hellow 😊"
 const niceQuote = "\nMake Everyday a little less ordinarily 😊 !!!"
 
 
-// fs.appendFile("./awesome.txt", niceQuote , (err) =>{
-//     console.log("completed writing");
-// });
+fs.appendFile("./awesome.txt", niceQuote , (err) =>{
+    console.log("completed writing");
+});
 
-// fs.unlink("./awesome.txt", err =>{
-//     console.log("Deleting Sucessfully !!!")
-// })
+fs.unlink("./awesome.txt", err =>{
+    console.log("Deleting Sucessfully !!!")
+})
 
 
 // fs.writeFile("./awesome.txt", quote , (err) =>{
